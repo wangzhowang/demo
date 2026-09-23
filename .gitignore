@@ -1,0 +1,20 @@
+# 编译输出
+target/
+out/
+build/
+
+# IDEA 配置
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# 日志
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量
+.env
