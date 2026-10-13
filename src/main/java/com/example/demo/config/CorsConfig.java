@@ -1,13 +1,10 @@
 package com.example.demo.config;
 
 import com.example.demo.interceptor.TokenInterceptor;
-import com.example.demo.mapper.SysUserMapper;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import javax.sql.rowset.WebRowSet;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
@@ -36,6 +33,7 @@ public class CorsConfig implements WebMvcConfigurer {
                 .excludePathPatterns(                //允许通行接口，提供测试
                         "/api/login",
                         "/api/product/**",
+                        "/api/getalluserdata",
                         "/apitest/**"
                 );  // 登录接口不拦截
     }

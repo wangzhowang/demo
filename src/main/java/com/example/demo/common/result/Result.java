@@ -22,15 +22,18 @@ public class Result<T> {
     }
 
     public static <T> Result<T> success(String msg, T data) {
+
         return new Result<>(ResultCode.SUCCESS.getCode(), msg, data);
     }
 
     // ===================== 失败静态方法 =====================
     public static <T> Result<T> fail(ResultCode codeEnum) {
+
         return new Result<>(codeEnum.getCode(), codeEnum.getMsg(), null);
     }
 
     public static <T> Result<T> fail(int code, String msg) {
+
         return new Result<>(code, msg, null);
     }
 
