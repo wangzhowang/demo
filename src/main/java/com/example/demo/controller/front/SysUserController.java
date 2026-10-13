@@ -48,6 +48,7 @@ public class SysUserController {
     }
 
     //测试接口方法获取所有用户信息
+    //后续应修改后优化接口
     @GetMapping("/getalluserdata")
     public Result<List<SysUser>> getUserListdata() {
         List<SysUser> allsysuserlist = baseMapper.selectList(null);
