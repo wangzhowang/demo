@@ -34,6 +34,7 @@ public class CorsConfig implements WebMvcConfigurer {
                         "/api/login",
                         "/api/product/**",
                         "/api/getalluserdata",
+                        "/api/register",
                         "/apitest/**"
                 );  // 登录接口不拦截
     }

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // 全参构造，静态方法new对象用
 public class Result<T> {
     private int code;
-    private String message;
+    private String msg;
     private T data;
 
     // ===================== 成功静态方法 =====================
@@ -24,6 +24,10 @@ public class Result<T> {
     public static <T> Result<T> success(String msg, T data) {
 
         return new Result<>(ResultCode.SUCCESS.getCode(), msg, data);
+    }
+
+    public static <T> Result<T> success( int code,String msg,T data) {//自定义成功方法，错误代码，错误信息，返回数据自定义
+        return new Result<>(code,msg,data);
     }
 
     // ===================== 失败静态方法 =====================

@@ -7,6 +7,7 @@ import com.example.demo.dto.LoginDTO;
 import com.example.demo.entity.SysUser;
 import com.example.demo.service.SysUserService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -17,11 +18,13 @@ public class SysUserController {
 
     private final SysUserService sysUserService;
     private final BaseMapper<SysUser> baseMapper;
+    private final ListableBeanFactory listableBeanFactory;
 
-    public SysUserController(SysUserService sysUserService, @Qualifier("sysUserMapper") BaseMapper<SysUser> baseMapper) {
+    public SysUserController(SysUserService sysUserService, @Qualifier("sysUserMapper") BaseMapper<SysUser> baseMapper, ListableBeanFactory listableBeanFactory) {
 
         this.sysUserService = sysUserService;
         this.baseMapper = baseMapper;
+        this.listableBeanFactory = listableBeanFactory;
     }
 
     /**
