@@ -1,6 +1,8 @@
 package com.example.demo.controller.front;
 
 import com.example.demo.common.result.Result;
+import com.example.demo.dto.UserLoginDTO;
+import com.example.demo.dto.UserLoginVO;
 import com.example.demo.dto.UserRegisterDTO;
 import com.example.demo.service.UserService;
 import jakarta.validation.Valid;
@@ -18,10 +20,16 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
+    //注册模块
     @PostMapping("/register")
     public Result<Void> register(@RequestBody @Valid UserRegisterDTO dto) {
         userService.register(dto);
         return Result.success();
+    }
+
+    //登录模块
+    @PostMapping("/login")
+    public Result<UserLoginVO> login(@RequestBody @Valid UserLoginDTO dto) {
+        return Result.success(userService.login(dto));
     }
 }

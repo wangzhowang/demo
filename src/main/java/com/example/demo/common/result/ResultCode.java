@@ -10,8 +10,8 @@ public enum ResultCode {
     // 客户端错误 4xx
 
     PARAM_ERROR(1400, "参数校验失败"),
-    UNAUTHORIZED(1401, "未登录或token失效"),
-    FORBIDDEN(1403, "权限不足，禁止访问"),
+    UNAUTHORIZED(1201, "未登录或token失效"),
+    FORBIDDEN(1203, "权限不足，禁止访问"),
     NOT_FOUND(1404, "资源不存在"),
 
     // 服务端错误 5xx
@@ -22,7 +22,7 @@ public enum ResultCode {
 
     //登录校验枚举类
     USER_NOT_EXIST(1404,"用户名不存在"),
-    PASSWORD_ERROR(1405, "用户名密码不匹配"),
+    PASSWORD_ERROR(1405, "用户名或密码错误"),
     ACCOUNT_DISABLE(1409,"账号启用异常" );
 
     private final int code;
